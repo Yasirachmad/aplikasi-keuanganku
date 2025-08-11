@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Tracker</title>
+
+    <!-- font (opsional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* style kecil untuk preview cepat kalau belum ada style.css */
+      :root{--bg:#f6f7fb;--card:#fff;--muted:#6b7280;--accent:#6b7cff}
+      body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#111}
+      .content{display:flex;gap:28px;padding:36px;max-width:1200px;margin:24px auto}
+      .main{flex:1}
+      .hero{background:linear-gradient(180deg,#6f77ff 0%, #7f8bff 100%);color:#fff;padding:40px;border-radius:14px;display:flex;align-items:center;box-shadow:0 6px 18px rgba(13,22,55,0.08)}
+      .hero-content{display:flex;align-items:center;gap:30px;width:100%}
+      .hero-text{flex:1}
+      .hero-welcome{font-size:48px;margin:0 0 12px 0;line-height:1.05;font-weight:700}
+      .hero-sub{font-size:20px;margin:0;opacity:0.95}
+      .hero-image img{max-width:420px;width:100%;height:auto;border-radius:8px}
+      /* kartu ringkas */
+      .money-card-content{display:flex;gap:16px;margin-top:20px}
+      .money-card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 14px rgba(15,23,42,0.06);flex:1}
+      .card-title{margin:0;color:var(--muted);font-size:14px}
+      .card-amount{margin:8px 0 0;font-weight:700;font-size:20px}
+      /* sisi kanan (form) */
+      .right-content{width:360px}
+      .form-section{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 14px rgba(15,23,42,0.06)}
+      .form-title{margin:0 0 16px 0}
+      .form-input{width:100%;padding:12px;border-radius:10px;border:1px solid #eef2ff;background:#fbfdff;margin-top:6px}
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <main class="main">
+        <div class="container">
+          <section class="hero">
+            <div class="hero-content">
+              <div class="hero-text">
+                <!-- teks sudah diganti sesuai permintaan -->
+                <h1 class="hero-welcome">halo ini aplikasi pertama keuangan saya</h1>
+                <p class="hero-sub">terima kasih atas kunjungan dan apresiasinya</p>
+              </div>
+
+              <div class="hero-image">
+                <!-- Ganti file gambar di folder assets menjadi hero.png -->
+                <img src="assets/hero.png" alt="Ilustrasi money tracker" />
+              </div>
+            </div>
+          </section>
+
+          <!-- contoh card -->
+          <div class="money-card-content">
+            <div class="money-card total-balance">
+              <div class="card-info">
+                <h3 class="card-title">Total Balance</h3>
+                <p class="card-amount">Rp 2.500.000</p>
+              </div>
+            </div>
+
+            <div class="money-card income">
+              <div class="card-info">
+                <h3 class="card-title">Income</h3>
+                <p class="card-amount">Rp 5.000.000</p>
+              </div>
+            </div>
+
+            <div class="money-card expense">
+              <div class="card-info">
+                <h3 class="card-title">Expense</h3>
+                <p class="card-amount">Rp 2.500.000</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <aside class="right-content">
+        <div class="form-section">
+          <h2 class="form-title">Add New Transaction</h2>
+          <form class="transaction-form">
+            <label>Transaction Name
+              <input class="form-input" id="transaction-name" placeholder="Enter transaction name" />
+            </label>
+            <label style="display:block;margin-top:12px">Amount (Rp)
+              <input class="form-input" id="amount" placeholder="Amount" />
+            </label>
+            <div style="margin-top:12px">
+              <button type="button" style="padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff">Add Transaction</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <!-- script jika ada -->
+    <script src="script.js"></script>
+  </body>
+</html>
